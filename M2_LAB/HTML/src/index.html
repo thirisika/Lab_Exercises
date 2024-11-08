@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Module2</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Module2 Lab Exercises">
+  <meta name="keywords" content="HTML,CSS,JavaScript">
+  <meta name="author" content="Thirisika">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    table,
+    th,
+    td {
+      border: 1px solid black;
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <!-- Page headline -->
+  <h1>My HTML Learning Journey</h1>
+  <header>
+    <nav>
+      <!-- works like <a href="/index.html">Home</a> -->
+       <!-- Link to  home and form page -->
+      <a href="index.html">Home</a>
+      <a href="form.html">Form</a>
+    </nav>
+
+  </header>
+
+  <main>
+  </main>
+
+  <article>
+    <!-- Content added in previous points -->
+
+    <!-- Article headline -->
+    <h2>Learning elements - div, span, p, pre, ul, li, ol, article</h2>
+
+    <!---Block Elements-->
+    <div>Cricket</div>
+    <div>Netball</div>
+    <div>Football</div>
+
+    <!---Inline Elements-->
+
+    <span>Mouse</span>
+    <span>Keyboard</span>
+    <span>Printer</span>
+
+    <p>
+      p represents paragraph without preserving spacing
+    </p>
+    <pre>
+      Text in         a pre element
+      is displayed in a fixed-width
+      font, and it preserves
+      both      spaces and
+      line breaks
+      </pre>
+
+    <!-- Unordered list -->
+    <ul>
+      <li>Book</li>
+      <li>Pencil</li>
+      <li>Bag</li>
+      <!-- Unordered list with nested ordered list -->
+      <li>Pen
+        <ol>
+          <li>Blue Pen</li>
+          <li>Black Pen</li>
+        </ol>
+      </li>
+    </ul>
+
+    <!-- Ordered list -->
+    <ol>
+      <li>apple</li>
+      <li>Orange</li>
+      <li>Banana</li>
+    </ol>
+
+
+
+
+  </article>
+
+  <article>
+    <h2>Table</h2>
+
+    <table>
+      <thead>
+        <tr>
+          <th colspan="2">First header</th>
+          <th>Second header</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>First cell - first row</td>
+          <td>Second cell - first row</td>
+          <td>Third cell - first row</td>
+        </tr>
+        <tr>
+          <td>First cell - second row</td>
+          <td> Second cell - second row</td>
+          <td rowspan="2">Third cell - second row</td>
+        </tr>
+            <!-- Adding 3rd row -->
+
+        <tr>
+          <td>First cell - Third row</td>
+          <td>Second cell - Third row</td>
+
+        </tr>
+      </tbody>
+    </table>
+
+  </article>
+
+
+    <!-- adding image,audio and video -->
+
+
+  <article>
+    <h2>images,audio & video</h2>
+
+    <div><img src="https://picsum.photos/400/400" alt="natural_Clicks" width="400" height="200" /></div>
+    <div><img src="assets/html_lab_image.jpg" alt="Sky" width="400" height="200" /></div>
+
+    <video controls width="250">
+  <source src="/assets/flower.webm" type="video/webm">
+  Sorry, your browser doesn't support embedded videos.
+</video>
+
+
+    <figure>
+ 
+  <audio  controls src="/assets/t-rex-roar.mp3" >
+    Your browser does not support the <code>audio</code> element.
+    
+  </audio>
+  <figcaption>Audio</figcaption>
+</figure>
+
+    <!-- <video  width="250" autoplay>
+      <source src="/assets/flower.webm" type="video/webm">
+      Sorry, your browser doesn't support embedded videos.
+    </video>
+
+    <figure>
+
+      <audio  src="/assets/t-rex-roar.mp3" autoplay>
+        Your browser does not support the <code>audio</code> element.
+      
+      </audio>
+      <figcaption>Audio</figcaption>
+    </figure> -->
+
+
+  </article>
+
+
+
+
+  <footer>Copyright &copy; 2024</footer>
+</body>
+
+</html>

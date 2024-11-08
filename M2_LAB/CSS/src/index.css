@@ -1,0 +1,257 @@
+/* I. Selectors */
+/* Put styles for questions 1.1, 1.2, 1.3 and 1.4 here */
+/* -------------Q1--------------------- */
+
+/* add type selector for article */
+
+article {
+margin: 20px 0;
+padding: 20px;
+border: 1px solid black;
+}
+
+/* change font color into red using class selector*/
+.style-me1{
+    color: red;
+}
+
+/* change font color into blue  using id selector*/
+
+#style-me2{
+    color: blue;
+}
+
+/* change font color into purple using specific selector*/
+
+p.style-me1#style-me2{
+    color: purple;
+}
+/* Put styles for questions 2.1 and 2.2 here */
+
+/* change  background color into red using descendant combinator */
+
+.my-descendants-are-styled p{
+  background-color: red;
+}
+
+/* change  background color into lightgreen using child combinator */
+
+.my-children-are-styled > p{
+    background-color: lightgreen;
+}
+
+/* II. Box model and common properties */
+/* Put styles for questions 1-8 here */
+
+.box{
+    background-color: orange;
+    /* padding:10px 20px 30px 40px;
+    margin:10px 20px 30px 40px; */
+
+    /* padding:1em 1em ;
+    margin:1em 1em; */
+
+    padding:5%  ;
+    margin:2% ;
+
+    /* width:40rem;
+    height:100px; */
+
+    width:80vw;
+    height:40vh !important;
+
+    /* Solid red border */
+
+    border: 3px solid red; 
+    /* Dashed blue border */
+
+    border: 4px dashed blue; 
+    /* Double pink border */
+
+    border: 6px double pink; 
+
+    /*add thick and solid border*/
+
+    border: 10px solid black; 
+
+    /* Testing with box-sizing property */
+
+    box-sizing: content-box;
+  
+    /* box-sizing: border-box; */
+
+    width: 100px;   /* Smaller width */
+  height: 50px;   /* Smaller height */
+  margin: 10px;
+  border: 2px solid red;
+  outline: 10px dotted green;  /*setting outline to box*/
+
+  /* overflow: visible; */
+    overflow: hidden;
+    overflow: scroll;
+    overflow: auto;
+
+    
+
+    border-radius: 20px;
+    border-radius: 1em;
+
+    /* make element look like a circle*/
+   
+    width:200px;          
+    height: 200px;
+    border-radius: 50%;
+
+    /* make element look like a oval*/
+    padding:90px; /* increase padding */
+    width:400px;          
+    height: 200px;
+    border-radius: 50%;
+
+    background-image: url('../assets/images/img1.png');
+    /* experiment with different background-size */
+
+    background-size: cover;
+    background-size: auto; 
+     background-size: 300px 100px; 
+
+     /* experiment with different background-repeat */
+
+    background-repeat: no-repeat;
+    background-repeat: repeat-y;
+    background-repeat: repeat-x;
+
+/* experiment with different background-position */
+
+    background-position: center;
+    background-position: center top;
+    background-position: left bottom;
+
+
+}
+
+
+/* III. Positioning */
+/* Put styles for questions 1-3 here */
+
+.position-absolute{
+    position:absolute;
+    top:0;
+    /* bottom:0; */
+    background-color:palevioletred;
+    left:80px;
+    right:80px;
+    
+} 
+
+.position-relative{
+    position:relative;
+    /* top:0; */
+    /* bottom:0; */
+    background-color:rgb(28, 130, 226); 
+    
+} 
+
+.position-sticky{
+    position: sticky;
+    background-color:orangered;
+    top:40px;
+}
+
+
+/* IV. Styling text */
+/* Put styles for questions 1-10 here */
+
+.text-style{
+    color:violet;
+    font-size:30px;
+    font-size:10px;
+    font-size:3em;
+    
+    line-height: 1.5;
+    line-height: 200%;
+     line-height: normal; 
+
+     font-weight:bold;
+     font-weight:900;
+
+     font-family: "PT Serif", serif;    /* some serif fonts */
+     font-weight:400;
+
+    font-family: "Sansita", sans-serif;    /*sans-serif fonts*/
+    font-weight: 400;
+
+    text-align: left;
+    text-align: right;
+    text-align: center;
+
+    letter-spacing: 4px;
+    letter-spacing: -4px;
+
+    word-spacing: 100px;
+    word-spacing: 30px;
+
+    text-transform: uppercase;
+    text-transform: lowercase;
+    text-transform: capitalize;
+
+    text-decoration: overline;
+    text-decoration: overline underline;
+    text-decoration: line-through; 
+    text-decoration: underline; 
+    
+   
+}
+
+
+/* V. Styling links */
+/* Put styles for questions 1-3 here */
+
+a:link {
+    color: red;
+    font-size: 30px;
+    font-weight: 400;
+    text-decoration: underline;
+  }
+
+a:hover, a:active, a:focus{
+    color:darkblue;
+    text-decoration: none;
+    text-decoration: underline;
+    
+}
+
+a:visited{
+    color: green;
+    font-style: bold; 
+    text-decoration: none;
+}
+
+
+/* VI. calc() */
+/* Put styles for questions 1-3 here */
+.calc-style{
+    width: 100vw;
+    background-color: aqua;
+    width: calc(100vw - 100px); 
+}
+.container{
+    width: 100%;
+}
+
+.fixed-width-col {
+    width:350px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+
+
+
+.fluid-col {
+    display: inline-block;
+    width:calc(100%-350px);
+    vertical-align: top;
+    background-color: blueviolet;
+}
+

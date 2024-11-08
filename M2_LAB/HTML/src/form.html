@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    div{
+      margin:10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <!-- works like <a href="/index.html">Home</a> -->
+       <!-- Link to  home and form page -->
+      <a href="index.html">Home</a>
+      <a href="form.html">Form</a>
+    </nav>
+  </header>
+
+  <main>
+
+    <form method="POST" action="http://localhost:3000/profile">
+
+      <div>
+        <label for="firstname">Firstname:</label>
+        <input type="text" name="firstname" id="firstname">
+      </div>
+
+      <div>
+        <label for="lastname">Lastname:</label>
+        <input type="text" name="lastname" id="lastname">
+      </div>
+
+      <div>
+        
+        <label for="C++"> <input type="radio" name="Language" value="C++" id="C++"> C++</label>
+        
+
+        
+        <label for="python"></label><input type="radio" name="Language" value="python" id="python">  Python</label>
+      
+
+        
+        <label for="java"></label><input type="radio" name="Language" value="java" id="java"> Java</label>
+       
+      </div>
+
+      <div>
+        
+        <label for="bike"> <input type="checkbox" name="Vehicle" value="bike" id="bike"> Bike</label>
+        
+
+        
+        <label for="car"></label><input type="checkbox" name="Vehicle" value="car" id="car">  Car</label>
+      
+
+        
+        <label for="van"></label><input type="checkbox" name="vehicle" value="van" id="van"> Van</label>
+       
+      </div>
+
+      <div>
+        <select id="brand" name="brand">
+          <option>-Select one brand-</option>
+          <option value="toyota">Toyota</option>
+          <option value="volvo">Volvo</option>
+          <option value="ford">Ford</option>
+
+        </select>
+      </div>
+
+      <div> <button type="submit">Submit form</button></div>
+     
+
+
+    </form>
+
+  </main>
+
+  <footer>Copyright &copy; 2024</footer>
+</body>
+
+</html>
