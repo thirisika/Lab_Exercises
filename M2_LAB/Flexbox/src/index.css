@@ -30,7 +30,7 @@ a {
 }
 
 .h-80 {
-    height: 80px;
+    min-height: 80px;
 }
 
 .h-400 {
@@ -127,7 +127,6 @@ a {
     align-items: center;
      margin:10px; 
     padding:0.2px;
-    width:70%;
     height: 50px;
   
     /* align the menu items to the right */
