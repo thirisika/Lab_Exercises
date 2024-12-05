@@ -37,5 +37,12 @@ for(let i=0;i<animals.length;i++){
 }
 }
 
+// jo: better way is to use filter, and return the result instead of logging to console:
+function findMatchingAnimals2(beginsWith) {
+  return animals.filter(animal => animal.toLowerCase().startsWith(beginsWith.toLowerCase()))
+}
+
 findMatchingAnimals('MON');
 findMatchingAnimals('Li');
+
+console.log(findMatchingAnimals2('t'))

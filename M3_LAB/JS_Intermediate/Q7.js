@@ -33,23 +33,23 @@ const books = [
     console.log(addGenre());
 
     function getTitles(authorInitial){
-       const initial= books.filter(book=>book.author.charAt(0)==authorInitial).map(book=>book.title);
-       return initial;
+       const titles= books.filter(book=>book.author.charAt(0)==authorInitial).map(book=>book.title);
+       return titles;
     }
     console.log(getTitles('G'));
 
     function latestBook(){
     
-    let Book='';
+    let latestBook='';
     let publicationDate=0;
 
     books.forEach(book=>{
         if(book.year>publicationDate){
             publicationDate=book.year;
-            Book=book;
+            latestBook=book;
         }
     });
-    return Book;
+    return latestBook;
     }
 
     console.log('\n----recent Book------\n')

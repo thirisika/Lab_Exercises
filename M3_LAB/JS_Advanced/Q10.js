@@ -3,6 +3,7 @@
 // run 'npm pkg set type=module'
 import fetch from 'node-fetch'
 globalThis.fetch = fetch
+
 function fetchURLData(url) {
 let fetchPromise = fetch(url).then(response => {
 if (response.status === 200) {

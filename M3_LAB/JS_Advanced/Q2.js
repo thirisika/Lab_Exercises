@@ -20,6 +20,9 @@ delayMsg('#4: Not delayed at all');
 console.log(`This message will be printed after a delay: ${msg}`)
 }
 
+// jo: can make it more concise:
+delayMsg = msg => console.log(`This message will be printed after a delay: ${msg}`)
+
 //fifth test uses large delay time
 let delay5=setTimeout(delayMsg, 11000, '#5: Delayed by 11s');
 

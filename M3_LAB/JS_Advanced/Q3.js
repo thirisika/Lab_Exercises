@@ -34,5 +34,9 @@ function printMe() {
     debouncePrintcustom();
     debouncePrintcustom();  //execute after 3s
 
-    debouncePrintMsg('hello');//execute after 1.5s
+    // jo: added more tests, all working well
+    debouncePrintMsg('hello 1');
+    debouncePrintMsg('hello 2');
+    debouncePrintMsg('hello 3');
+    debouncePrintMsg('hello 4');//execute after 1.5s
     
