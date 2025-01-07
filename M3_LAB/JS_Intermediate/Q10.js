@@ -22,7 +22,7 @@ let dd=tdate-Bday.getDate();
 
 if(dd<0){
     mm=mm-1;
-    dd=dd+30;
+    dd=dd+30; // jo: ok for this exercise, but not all months have 30 days
 }
 
 if(mm<0){
