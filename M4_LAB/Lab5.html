@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News</title>
+    <style>
+
+         
+        .news {
+            border: 1px solid #ccc;
+            margin: 10px;
+            padding: 10px;
+            max-width: 400px;
+            flex:1;
+        }
+        .news-title {
+            font-weight: bold;
+        }
+        .news-content {
+            margin-top: 5px;
+        }
+
+        .container{
+            display:flex;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>latest News</h1>
+    <template id="news-template">
+      
+        <div class="news">
+            
+            <div class="news-body">
+                <div class="news-id"></div>
+               <div class="news-title"></div>
+             <div class="news-content"></div>
+            
+                
+            </div>
+        </div>
+       
+    </template>
+    <div id="news-list" class="container"></div>
+
+    <!-- create form field -->
+    <h2>Add a News Item</h2>
+    <form id="news-form">
+        <label for="news-title">News Item Title:<input type="text" id="news-title" required></label><br>
+        
+        
+        <label for="news-content">News Item Content:  <input type="text" id="news-content" required></label>
+      
+        
+        <button type="submit">Submit</button>
+    </form>
+    <script>
+            
+            let news = [
+    { id: 1, title: 'Election Results',
+    content: "Newly elected minister..." 
+},
+    { id: 2, title: 'Sporting Success',
+    content: "World Cup winners..." 
+},
+    { id: 3, title: 'Tornado Warning',
+    content: "Residents should prepare..." 
+}
+    ];
+    function addNews(){
+         const newsList = document.getElementById('news-list');
+        newsList.innerHTML=""; //clear all exising item
+          
+            news.forEach(n=>{
+                const template =document.getElementById("news-template").content.cloneNode(true);
+                template.querySelector('.news-id').innerText =  `ID: ${n.id}`;
+                template.querySelector('.news-title').innerText =n.title;
+                template.querySelector('.news-content').innerText =n.content;
+                 newsList.appendChild(template);
+                
+        
+            });
+         
+           
+    }
+
+   function update(event) {
+    event.preventDefault(); // Prevent form submission and page reload
+   
+   const title= document.getElementById('news-title').value;
+   const content= document.getElementById('news-content').value;
+
+   //add new news
+   if(title && content){
+        // Add new news item
+   news.push({id:news.length+1,title,content});
+
+  // clear form
+    document.getElementById('news-title').value='';
+    document.getElementById('news-content').value='';
+
+     // Update the displayed news
+    addNews();
+   }
+   }
+
+   document.getElementById('news-form').addEventListener('submit',update);
+   // Periodically update news every 5 seconds
+    setInterval(addNews,5000);
+ // Initial load of news
+   addNews();
+
+
+    </script>
+   
+   
+</body>
+</html>
