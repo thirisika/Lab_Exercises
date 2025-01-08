@@ -26,90 +26,90 @@
 </head>
 
 <body>
-    
+
     <template id="card-template">
-      
+
         <div class="card">
-            
+
             <div class="card-body">
-                
-               <div class="card-title"></div>
-               <img class="card-img" src="" >
+
+                <div class="card-title"></div>
+                <img class="card-img" src="">
                 <div class="card-text"></div>
-                
-                
+
             </div>
         </div>
-       
+
     </template>
     <div id="portfolio"></div>
     <div id="card-list"></div>
-   
+
     <script>
 
+        // jo: code works well, but try to use consistent indenting for better readability. Ctrl-K-F in VS Code will auto-format
 
-        function addCard(title,text) {
-        // clone the template
-        const template =
-        document.getElementById("card-template")
-        .content.cloneNode(true);
-        // populate the template
-        template.querySelector('.card-title').innerText =
-        title;
-        template.querySelector('.card-text').innerText =
-        text;
-        // include the populated template into the page
-        document.querySelector('#card-list')
-        .appendChild(template);
+        function addCard(title, text) {
+            // clone the template
+            const template = document.getElementById("card-template").content.cloneNode(true);
+
+            // populate the template
+            template.querySelector('.card-title').innerText = title;
+            template.querySelector('.card-text').innerText = text;
+
+            // include the populated template into the page
+            document.querySelector('#card-list').appendChild(template);
         }
-        addCard('card_#1','lorem ipsum ble bla');
-        addCard('card_#2','Good dreams');
-        addCard('card_#3','Essential goals');
+        addCard('card_#1', 'lorem ipsum ble bla');
+        addCard('card_#2', 'Good dreams');
+        addCard('card_#3', 'Essential goals');
 
-        const data = [{ name: 'bob', age: 23 },
+        const data = [
+            { name: 'bob', age: 23 },
             { name: 'alice', age: 39 }]
 
-            data.forEach((card)=>{
-                addCard(card.name,card.age);
-            });
+        data.forEach((card) => {
+            addCard(card.name, card.age);
+        });
 
-            const art={
-                    name: "Van Gogh",
-                    portfolio:[
+        const art = {
+            name: "Van Gogh",
+            portfolio: [
                 {
                     title: "portrait",
-                     url:"https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"
-                    },
-                
-
-                {title: "sky", 
-                url:"https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg"
-            },
+                    url: "https://collectionapi.metmuseum.org/api/collection/v1/iiif/436532/1671316/main-image"
+                },
+                {
+                    title: "sky",
+                    url: "https://mymodernmet.com/wp/wp-content/uploads/2020/11/White-house-night-van-goh-worldwide-2.jpg"
+                },
             ]
-}
+        }
 
-            function artistDetail(artist){
-               const artHeading=document.getElementById('portfolio');
-                            // Create element:
+        function artistDetail(artist) {
+            const artHeading = document.getElementById('portfolio');
+            // Create element:
             const cardHeading = document.createElement("h1");
             cardHeading.innerText = artist.name;
 
-        // Append to body:
+            // Append to body:
             artHeading.appendChild(cardHeading);
-                            
-                            artist.portfolio.forEach(prop=>{
-                                // clone the template
-                            const template = document.getElementById("card-template").content.cloneNode(true);
-                                template.querySelector('.card-title').innerText =prop.title;  //include card title
-                                template.querySelector('.card-img').src =prop.url;  //include img url
-                                   // include the populated template into the page
-                                    document.querySelector('#card-list').appendChild(template);
-                            });
-                          
-        
-            }
-            artistDetail(art);
-        </script>
+
+            artist.portfolio.forEach(prop => {
+                // clone the template
+                // jo: better to make a separate template for portfolio items, since the data is structured differently
+                const template = document.getElementById("card-template").content.cloneNode(true);
+
+                template.querySelector('.card-title').innerText = prop.title;  //include card title
+                template.querySelector('.card-img').src = prop.url;  //include img url
+
+                // include the populated template into the page
+                // jo: maybe better to append to the #portfolio element here?
+                document.querySelector('#card-list').appendChild(template);
+            });
+        }
+        artistDetail(art);
+
+    </script>
 </body>
 
 </html>
