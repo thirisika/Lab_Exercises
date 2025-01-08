@@ -84,6 +84,7 @@ async function displayJson() {
     // Filter products based on selected category
     categorySelect.addEventListener('change', () => {
         const selectedCategory = categorySelect.value;
+        // jo: much faster to avoid re-fetching and just filter existing product list by selected category
         fetchAndDisplayPosts(selectedCategory);
     });
 }
