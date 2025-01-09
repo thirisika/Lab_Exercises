@@ -14,6 +14,7 @@ function displayJson(){
                 const card = document.createElement('div');
                 card.className = 'col-lg-3 col-md-6 col-12';
 
+                // jo: ideally use a template instead to keep HTML and JS separate, but this does work well
                 card.innerHTML = `
                     <div class="card" style="width: 16rem; height: 17rem">
                         <div class="card-body">
