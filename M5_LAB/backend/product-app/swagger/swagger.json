@@ -1,0 +1,56 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+      "title": "Fake eCommerce Store API",
+      "version": "1.0.0",
+      "description": "API documentation for the Fake eCommerce Store project."
+    },
+    "paths": {
+      "/api/products/categories": {
+        "get": {
+          "summary": "Get all product categories",
+          "responses": {
+            "200": {
+              "description": "A list of product categories",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "type": "string" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "/api/products/{category}": {
+        "get": {
+          "summary": "Get products by category",
+          "parameters": [
+            {
+              "name": "category",
+              "in": "path",
+              "required": true,
+              "description": "Category name or 'all' for all products",
+              "schema": { "type": "string" }
+            }
+          ],
+          "responses": {
+            "200": {
+              "description": "A list of products",
+              "content": {
+                "application/json": {
+                  "schema": {
+                    "type": "array",
+                    "items": { "type": "object" }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  
