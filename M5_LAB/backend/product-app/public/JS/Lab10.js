@@ -21,6 +21,7 @@ async function displayJson() {
     }
 
     // Fetch and display products based on category
+    // jo: would be faster to filter the total list instead of refetch a new one
     async function fetchAndDisplayPosts(category = 'all') {
         container.innerHTML = ''; // Clear previous posts
         try {

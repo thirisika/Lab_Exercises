@@ -32,7 +32,7 @@ router.get('/filter', (req, res) => {
     }
 
     if(filterLetter){
-        matchingFriends = matchingFriends.filter(friend => friend.name && friend.name.startsWith(filterLetter));
+        matchingFriends = matchingFriends.filter(friend => friend.name && friend.name.startsWith(filterLetter)); // jo: make it case-insentitive
     }
     
     if (matchingFriends.length > 0) {
@@ -40,7 +40,7 @@ router.get('/filter', (req, res) => {
         res.status(200).json(matchingFriends)
     } else {
         // and an error response when there are no matches
-        res.status(404).json({error: "No friends matching gender "+filterGender})
+        res.status(404).json({error: "No friends matching gender "+filterGender}) // jo: include the letter (if present) in the error message too
     }  
 })
 
@@ -48,9 +48,9 @@ router.get('/filter', (req, res) => {
 router.get('/info', (req, res) => {
     console.log(req.headers)
 
-    const myHeaders={userAgent:req.headers['user-agent'],contentType:req.headers['content-type'],accept:req.headers.accept};
+    const myHeaders = { userAgent: req.headers['user-agent'], contentType: req.headers['content-type'], accept: req.headers.accept };
 
-    myHeaders.acceptEncoding=req.headers['accept-encoding'];
+    myHeaders.acceptEncoding = req.headers['accept-encoding'];
 
     // Modify this response to just return info on the user-agent, content-type and accept headers
     res.json(myHeaders)  
@@ -102,7 +102,7 @@ router.put('/:id', (req, res) => {
     let updatedFriend = req.body;
 
     // Find the index of the friend with the given ID
-    let friendIndex = friends.findIndex(friend => friend.id === friendId);
+    let friendIndex = friends.findIndex(friend => friend.id == friendId);
 
     // Replace the old friend data for friendId with the new data from updatedFriend
     if (friendIndex === -1) {
