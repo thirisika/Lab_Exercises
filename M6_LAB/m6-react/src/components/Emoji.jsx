@@ -1,26 +1,28 @@
 import { useState } from "react";
-function Emoji(){
 
-    const [emoji, setEmoji] = useState('😊');
+// jo: great! just watch the indenting
 
-    const handleEmoji = () => {
-       
-                    // Switch between two emojis using if-else
-                if (emoji === '😊') {
-                    setEmoji('😢'); // Set to sad emoji
-                } else {
-                    setEmoji('😊'); // Set back to happy emoji
-                }
-       
-        }
-    return(
+function Emoji() {
+  const [emoji, setEmoji] = useState("😊");
 
-        <div className="Emoji componentBox">
-               Emoji: {emoji}
-               <button onClick={handleEmoji}>Change Emoji</button>
-        </div>
+  const handleEmoji = () => {
+    // Switch between two emojis using if-else
+    if (emoji === "😊") {
+      setEmoji("😢"); // Set to sad emoji
+    } else {
+      setEmoji("😊"); // Set back to happy emoji
+    }
 
-    )
+    // jo: also could use a conditional:
+    // setEmoji(prevEmoji => prevEmoji === "😊" ? "😢" : "😊")
+  };
+
+  return (
+    <div className="Emoji componentBox">
+      Emoji: {emoji}
+      <button onClick={handleEmoji}>Change Emoji</button>
+    </div>
+  );
 }
 
-export default Emoji
+export default Emoji;

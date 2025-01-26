@@ -43,6 +43,6 @@
 
 
 /* add into App.css to apply to entire component tree */
-.componentBox { border: 1px solid #aaa; margin: 1em;
+.componentBox { border: 1px solid #aaa; margin: 1em; color: black;
   padding: 1em; text-align: center; background: #efefef; }
 

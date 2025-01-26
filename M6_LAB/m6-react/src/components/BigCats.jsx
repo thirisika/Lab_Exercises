@@ -49,29 +49,34 @@ const cats = [
 ];
 
 
-function BigCats(){
+function BigCats() {
 
-  const[bigcats,setBigcats]=useState(cats);
+  const [bigcats, setBigcats] = useState(cats);
 
-  const handleDeleteCat=(id)=>{
-    let newCats=bigcats.filter(cat=>cat.id!=id);
+  const handleDeleteCat = (id) => {
+    let newCats = bigcats.filter((cat) => cat.id != id);
     setBigcats(newCats);
-  }
+  };
 
 
   const handleAddCat = (newCat) => {
     // newMovie.id = currentMovies.length + 1; // unreliable but succinct
     // setCurrentMovies([...currentMovies, newMovie])
-    let newCats=[...bigcats,{...newCat,id:bigcats.length+1}];
+    let newCats = [...bigcats, { ...newCat, id: bigcats.length + 1 }];
     setBigcats(newCats);
-    }
+  };
     
 
-const catList = bigcats.map(cat => (
- <SingleCat key={cat.id} id={cat.id} name={cat.name} latinName={cat.latinName} image={cat.image} onDeleteCat={handleDeleteCat}/>
-   
-  
-    ))
+const catList = bigcats.map((cat) => (
+  <SingleCat
+    key={cat.id}
+    id={cat.id}
+    name={cat.name}
+    latinName={cat.latinName}
+    image={cat.image}
+    onDeleteCat={handleDeleteCat}
+  />
+));
 
 const handleReverseCats = ()=>{
   let newcats=[...bigcats];
@@ -93,6 +98,7 @@ const handlePanthera=()=>{
 const handleReset=()=>{
     setBigcats(cats);
 }
+
 return (
     <div className="BigCats componentBox">
       <ul>
@@ -108,4 +114,5 @@ return (
     </div>
   );
 }
+
 export default BigCats;

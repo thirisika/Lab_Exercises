@@ -1,5 +1,8 @@
 import { useState } from "react";
 
+// jo: try to split this up into multiple re-usable smaller components instead of putting everything in one big one
+// jo: watch your formatting!
+
 function Calculator() {
   const [num1, setNum1] = useState("");
   const [num2, setNum2] = useState("");
@@ -104,8 +107,9 @@ function Calculator() {
           <input
             name="result"
             type="text"
-            value={result}
-           
+            // jo: better way to have a readonly field, this avoid the warnings from React
+            defaultValue={result}
+            readOnly
           />
         </label>
         </div>
