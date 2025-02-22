@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { TextField, Button, Box, Typography, Alert } from "@mui/material";
 
+// jo: good use of MUI components, and great formatting
 function LoginForm() {
     const [userEmail, setUserEmail] = useState("");
     const [userPassword, setUserPassword] = useState("");

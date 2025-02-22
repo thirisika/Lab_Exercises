@@ -35,6 +35,7 @@ function BitcoinRates() {
 // }
 //  }, [currency]);
 
+// jo: please fix formatting here, code is good though
 // Use the custom hook for fetching Bitcoin price data
 const priceData=useData(`https://api.coingecko.com/api/v3/simple/price?ids=bitcoin&vs_currencies=${currency}`,{});
 
