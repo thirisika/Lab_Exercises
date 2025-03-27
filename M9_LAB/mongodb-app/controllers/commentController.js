@@ -1,7 +1,8 @@
 "use strict";
 let Models = require("../models"); // matches index.js
-const getComments= (res) => {
-  // finds all users
+
+const getComments = (res) => {
+  // finds all comments
   Models.Comment.find({})
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
@@ -9,8 +10,9 @@ const getComments= (res) => {
       res.send({ result: 500, error: err.message });
     });
 };
-const createComments = (data, res) => {
-  // creates a new user using JSON data POSTed in request body
+
+const createComment = (data, res) => {
+  // creates a new comment using JSON data POSTed in request body
   console.log(data);
   new Models.Comment(data)
     .save()
@@ -21,8 +23,8 @@ const createComments = (data, res) => {
     });
 };
 
-const updateComments = (req, res) => {
-  // updates the user matching the ID from the param using JSON data POSTed in request body
+const updateComment = (req, res) => {
+  // updates the comment matching the ID from the param using JSON data POSTed in request body
   console.log(req.body);
   Models.Comment.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
@@ -33,8 +35,9 @@ const updateComments = (req, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
-const deleteComments = (req, res) => {
-  // deletes the user matching the ID from the param
+
+const deleteComment = (req, res) => {
+  // deletes the comment matching the ID from the param
   Models.Comment.findByIdAndDelete(req.params.id)
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
@@ -44,29 +47,32 @@ const deleteComments = (req, res) => {
 };
 
 const getUserComments = (req, res) => {
-    // finds all posts for a given user and populates with user details
-    Models.Comment.find({userId: req.params.uid}).populate({path: 'userId'})
+  // finds all comments for a given user and populates with user details
+  Models.Comment.find({ userId: req.params.uid })
+    .populate({ path: "userId" })
     .then((data) => res.send({ result: 200, data: data }))
     .catch((err) => {
-    console.log(err);
-    res.send({ result: 500, error: err.message });
+      console.log(err);
+      res.send({ result: 500, error: err.message });
     });
-    };
+};
 
-    const getPostComments = (req, res) => {
-        // finds all posts for a given user and populates with user details
-        Models.Comment.find({postId: req.params.pid}).populate({path: 'postId'})
-        .then((data) => res.send({ result: 200, data: data }))
-        .catch((err) => {
-        console.log(err);
-        res.send({ result: 500, error: err.message });
-        });
-        };
+const getPostComments = (req, res) => {
+  // finds all comments for a given post and populates with post details
+  Models.Comment.find({ postId: req.params.pid })
+    .populate({ path: "postId" })
+    .then((data) => res.send({ result: 200, data: data }))
+    .catch((err) => {
+      console.log(err);
+      res.send({ result: 500, error: err.message });
+    });
+};
+
 module.exports = {
   getComments,
-  createComments,
-  updateComments,
-  deleteComments,
+  createComment,
+  updateComment,
+  deleteComment,
   getUserComments,
-  getPostComments
+  getPostComments,
 };

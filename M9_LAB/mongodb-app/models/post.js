@@ -5,14 +5,13 @@ const postSchema = new Schema({
   // lastName: { type: String, trim: true, required: true },
   // emailId: { type: String, trim: true, required: true, unique: true },
   // password: { type: String },
-    title: { type: String, trim: true, required: true },
-    description: { type: String, trim: true, required: true },
-    image_url:{type: String, trim: true, required: true },
-    // likes:{type: Integer, trim: true, required: true },
-    user_id:{type: String, trim: true, required: true },
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
-   createdAt: { type: Date, default: Date.now },
-   updatedAt: { type: Date, default: Date.now },
+  title: { type: String, trim: true, required: true },
+  description: { type: String, trim: true, required: true },
+  image_url: { type: String, trim: true, required: true },
+  likes: { type: Integer, trim: true, required: true },
+  userId: { type: mongoose.Schema.Types.ObjectId, ref: "user" },
+  createdAt: { type: Date, default: Date.now },
+  updatedAt: { type: Date, default: Date.now },
 });
 module.exports = mongoose.model("post", postSchema);
 // The "user" mentioned in the above line should be in

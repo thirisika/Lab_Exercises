@@ -1,14 +1,14 @@
-'use strict'
-const User = require('./user') //require the model
-const Post = require('./post')
-const Comment = require('./comment')
+"use strict";
+const User = require("./user"); //require the model
+const Post = require("./post");
+const Comment = require("./comment");
 
 async function init() {
-await User.sync(); // sync the model
-// also sync any extra models here
-await Post.sync();
-await Comment.sync();
-};
+  await User.sync(); // sync the model
+  // also sync any extra models here
+  await Post.sync();
+  await Comment.sync();
+}
 
 init();
 
@@ -22,10 +22,9 @@ User.hasMany(Comment);
 Comment.belongsTo(Post);
 Post.hasMany(Comment);
 
-
 module.exports = {
-User,
-Post,
-Comment // export the model
-// also export any extra models here
+  User,
+  Post,
+  Comment, // export the model
+  // also export any extra models here
 };

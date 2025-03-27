@@ -1,5 +1,6 @@
 "use strict";
 let Models = require("../models"); // matches index.js
+
 const getUsers = (res) => {
   // finds all users
   Models.User.find({})
@@ -9,6 +10,7 @@ const getUsers = (res) => {
       res.send({ result: 500, error: err.message });
     });
 };
+
 const createUser = (data, res) => {
   // creates a new user using JSON data POSTed in request body
   console.log(data);
@@ -33,6 +35,7 @@ const updateUser = (req, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
+
 const deleteUser = (req, res) => {
   // deletes the user matching the ID from the param
   Models.User.findByIdAndDelete(req.params.id)
@@ -42,6 +45,7 @@ const deleteUser = (req, res) => {
       res.send({ result: 500, error: err.message });
     });
 };
+
 module.exports = {
   getUsers,
   createUser,

@@ -6,9 +6,6 @@ const commentSchema = new Schema({
   // emailId: { type: String, trim: true, required: true, unique: true },
   // password: { type: String },
     comment: { type: String, trim: true, required: true },
-   
-    user_id:{type: String, trim: true, required: true },
-    post_id:{type: String, trim: true, required: true },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'user' },
     postId: { type: mongoose.Schema.Types.ObjectId, ref: 'post' },
    createdAt: { type: Date, default: Date.now },
